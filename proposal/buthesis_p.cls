@@ -1,4 +1,4 @@
-%%% LaTeX class file to produce format for Bucknell University 
+%%% LaTeX class file to produce format for Bucknell University
 %%% Honors Thesis.  Modification of standard LaTeX book class.
 %%% This is very preliminary.
 %%% Martin Ligare, Bucknell Physics Department
@@ -14,7 +14,7 @@
 %
 \RequirePackage{bm}
 \RequirePackage[square]{natbib}
-\RequirePackage[bf,hang,small]{caption2}
+% \RequirePackage[bf,hang,small]{caption2}
 \RequirePackage{indentfirst}
 \pagestyle{plain}
 %\markright{}
@@ -35,15 +35,15 @@
                                  \setcounter{page}{2}
                                  \mbox{}
                                  \vspace{1.5in}
-         
+
                                   \begin{center}
                                   {\large\bf Acknowledgments}
                                   \end{center}
- 
+
                                   #1}
 \renewcommand*{\bibname}{References}
-%%% Remove following after spring 2005 - Not necessary because page number 
-%%% location fixed in chapter environment 
+%%% Remove following after spring 2005 - Not necessary because page number
+%%% location fixed in chapter environment
 \newcommand{\butableofcontents}{
                     \tableofcontents\thispagestyle{headings}\markright{}
                     \pagestyle{headings}}

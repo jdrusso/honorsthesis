@@ -15,7 +15,19 @@
 % \usepackage[backend=biber]{biblatex}
 % \addbibresource{bibliography.bib}\usepackage{tikz}
 \usepackage{tikz}
+\usetikzlibrary{shapes}
 \def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}
+\def\circle{
+\begin{tikzpicture}[scale=2]
+                \coordinate [label=left:$O$] (O) at (0,0);
+                \coordinate [label=right:$$] (A) at (0,1);
+                \coordinate [label=right:$$] (B) at (0,0);
+                \node[draw,circle through=(A)] at (O){};
+                \filldraw[black](A) circle (1pt);
+        % \draw[fill,color=red](0,0) circle (2cm and 2cm);
+        % \draw[fill,color=white](0,0) circle (1cm and 1cm);
+\draw (O)--(A);
+\end{tikzpicture}}
 
 
 \begin{document}
@@ -245,7 +257,7 @@ three main new elements, and studying their impacts.
 
 \begin{tabular}{l || c | c | c | c}
 & Transformation & Conjugation & Diffusion & Antibiotic Exposure \\ \hline
-Well-Mixed & \checkmark & $\times$ & $\times$ & \\ \hline
+Well-Mixed & \checkmark & \circle & $\times$ & \\ \hline
 Lattice & ? & $\times$ & $\times$ & \\ %\hline
 \end{tabular}
 \captionof{table}{This shows aspects of our research we either have completed or will
