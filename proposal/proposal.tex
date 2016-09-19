@@ -12,21 +12,21 @@
 \usepackage{vwcol}
 \usepackage{needspace}
 \usepackage{bibentry}
+\usepackage{array}
 % \usepackage[backend=biber]{biblatex}
 % \addbibresource{bibliography.bib}\usepackage{tikz}
 \usepackage{tikz}
 \usetikzlibrary{shapes}
-\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}
+\def\checkmark{\tikz\fill[scale=0.5](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}
+
 \def\circle{
-\begin{tikzpicture}[scale=2]
-                \coordinate [label=left:$O$] (O) at (0,0);
-                \coordinate [label=right:$$] (A) at (0,1);
-                \coordinate [label=right:$$] (B) at (0,0);
-                \node[draw,circle through=(A)] at (O){};
-                \filldraw[black](A) circle (1pt);
-        % \draw[fill,color=red](0,0) circle (2cm and 2cm);
-        % \draw[fill,color=white](0,0) circle (1cm and 1cm);
-\draw (O)--(A);
+\begin{tikzpicture}
+\draw (0,-50) circle (5pt);
+\end{tikzpicture}}
+
+\def \shadedcircle{
+\begin{tikzpicture}
+\draw[fill, color=black](0,0) circle (5pt);
 \end{tikzpicture}}
 
 
@@ -255,11 +255,12 @@ We plan to continue this research by expanding our simulation to model the
 populations more accurately. Specifically, we plan to accomplish this by incorporating
 three main new elements, and studying their impacts.
 
+{\setlength{\extrarowheight}{6pt}
 \begin{tabular}{l || c | c | c | c}
 & Transformation & Conjugation & Diffusion & Antibiotic Exposure \\ \hline
-Well-Mixed & \checkmark & \circle & $\times$ & \\ \hline
-Lattice & ? & $\times$ & $\times$ & \\ %\hline
-\end{tabular}
+Well-Mixed & \checkmark & \circle & \circle & \circle \\ \hline
+Lattice & \shadedcircle & \circle & \circle & \circle \\ %\hline
+\end{tabular}}
 \captionof{table}{This shows aspects of our research we either have completed or will
 study. Well studied regimes are denoted by a checkmark, an empty circle indicates
 an area we will explore, and a shaded circle represents an area we have begun
